@@ -1,9 +1,3 @@
-/*
- * Lab6Task4.cpp
- *
- * Created: 10/10/2025 12:02:18 AM
- * Author : Usman
- */ 
 #define F_CPU 16000000UL
 #include <avr/io.h>
 #include <util/delay.h>
@@ -105,3 +99,4 @@ void dat(unsigned char y)
 		PORTB = seven_seg_array[y]; // output on PORTB
 	}
 }
+
