@@ -1,3 +1,9 @@
+/*
+ * Lab6Task4.cpp
+ *
+ * Created: 10/10/2025 12:02:18 AM
+ * Author : Usman
+ */ 
 #define F_CPU 16000000UL
 #include <avr/io.h>
 #include <util/delay.h>
@@ -65,8 +71,8 @@ void keypad()
 	c2 = (PIND & (1<<PIND5)) == 0;
 	c3 = (PIND & (1<<PIND6)) == 0;
 	c4 = (PIND & (1<<PIND7)) == 0;
-	if (c1) { dat(0); while((PIND & (1<<PIND4))==0); }
-	else if (c2) { dat(13); while((PIND & (1<<PIND5))==0); }
+	if (c1) { dat(13); while((PIND & (1<<PIND4))==0); }
+	else if (c2) { dat(0); while((PIND & (1<<PIND5))==0); }
 	else if (c3) { dat(14); while((PIND & (1<<PIND6))==0); }
 }
 
@@ -99,4 +105,3 @@ void dat(unsigned char y)
 		PORTB = seven_seg_array[y]; // output on PORTB
 	}
 }
-
